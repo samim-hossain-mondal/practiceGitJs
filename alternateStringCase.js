@@ -7,7 +7,7 @@ const isUpperCase = (char) =>
 const isLowerCase = (char) =>
   char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122;
 
-function alterCase(str) {
+function alterCaseN(str) {
   let newStr = "";
   const margin = 32;
   function checkAndAlterCase(item) {
@@ -21,4 +21,19 @@ function alterCase(str) {
   return newStr;
 }
 
-console.log(alterCase(inputString));
+let alterCaseA = (str) => {
+  let newStr = "";
+  const margin = 32;
+  function checkAndAlterCase(item) {
+    newStr += isLowerCase(item)
+      ? String.fromCharCode(item.charCodeAt(0) - margin)
+      : isUpperCase(item)
+      ? String.fromCharCode(item.charCodeAt(0) + margin)
+      : item;
+  }
+  str.split("").forEach(checkAndAlterCase);
+  return newStr;
+};
+
+console.log(alterCaseN(inputString));
+console.log(alterCaseA(inputString));
