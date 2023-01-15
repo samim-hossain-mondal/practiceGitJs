@@ -1,4 +1,4 @@
-const file = require("./sameDigitNumbers");
+const file = require("./sameDigitNumber");
 
 const isSameDigitNumberA = file.isSameDigitNumberA;
 const isSameDigitNumberN = file.isSameDigitNumberN;
