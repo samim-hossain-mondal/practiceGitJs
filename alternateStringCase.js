@@ -1,5 +1,6 @@
 const readline = require("readline-sync");
 
+// User Input
 let inputString = String(readline.question());
 
 const isUpperCase = (char) =>
@@ -7,6 +8,7 @@ const isUpperCase = (char) =>
 const isLowerCase = (char) =>
   char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122;
 
+// Normal Function
 function alterCaseN(str) {
   let newStr = "";
   const margin = 32;
@@ -20,7 +22,9 @@ function alterCaseN(str) {
   str.split("").forEach(checkAndAlterCase);
   return newStr;
 }
+console.log(alterCaseN(inputString));
 
+// Arrow Function
 let alterCaseA = (str) => {
   let newStr = "";
   const margin = 32;
@@ -34,6 +38,7 @@ let alterCaseA = (str) => {
   str.split("").forEach(checkAndAlterCase);
   return newStr;
 };
-
-console.log(alterCaseN(inputString));
 console.log(alterCaseA(inputString));
+
+// Exporting Functions
+module.exports = { alterCaseN, alterCaseA };
